@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import br.ifsp.edu.dao.FuncionarioDAO;
 import br.ifsp.edu.model.Funcionario;
+import br.ifsp.edu.model.Sessao;
 import br.ifsp.edu.view.LoginView;
 import br.ifsp.edu.view.MenuView;
 
@@ -21,6 +22,8 @@ public class MainController {
 	}
 
 	private static void loadListeners() {
+		
+		
 		loginView.getBtnFechar().addActionListener(new ActionListener() {
 
 			@Override
@@ -40,7 +43,8 @@ public class MainController {
 				if (funcionario == null) {
 					JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválidos");
 				} else {
-					new MenuController(funcionario);
+					Sessao.getInstance().setFuncionario(funcionario);
+					new MenuController();
 					loginView.dispose();
 				}
 

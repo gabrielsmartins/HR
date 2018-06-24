@@ -43,6 +43,7 @@ public class PontoView extends JFrame {
 		this.setSize(350, 200);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setResizable(false);
 		
 	
 		this.btnMarcarPonto = new JButton("Marcar Ponto");

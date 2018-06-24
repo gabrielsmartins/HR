@@ -21,19 +21,17 @@ public class LoginView extends JFrame {
 	
 	private JButton btnLogin;
 	private JButton btnFechar;
-	
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
 	private JPanel panel;
 
-
-
 	
 	private void initComponents() {
 		this.setTitle("Autenticação de Usuário");
-		this.setSize(400, 200);
+		this.setSize(400, 150);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setResizable(false);
 		
 		this.btnLogin = new JButton("Login");
 		this.btnFechar = new JButton("Sair");

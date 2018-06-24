@@ -20,9 +20,10 @@ public class MenuView extends JFrame {
 	private JMenuBar menuBar;
 	private JMenu menuPonto;
 	private JMenuItem menuItemMarcarPonto;
-	private JMenuItem menuItemRelatorioPonto;
+	private JMenuItem menuItemConsultarPonto;
 	private JMenu menuAtestado;
 	private JMenuItem menuItemRegistrarAtestado;
+	private JMenuItem menuItemConsultarAtestado;
 	
 
 	
@@ -47,17 +48,19 @@ public class MenuView extends JFrame {
 		this.menuPonto = new JMenu("Ponto");
 		this.menuAtestado = new JMenu("Atestados");
 		this.menuItemMarcarPonto = new JMenuItem("Marcar Ponto");
-		this.menuItemRelatorioPonto = new JMenuItem("Relatório Ponto");
+		this.menuItemConsultarPonto = new JMenuItem("Consulta Ponto");
 		this.menuItemRegistrarAtestado = new JMenuItem("Registrar Atestado");
+		this.menuItemConsultarAtestado = new JMenuItem("Consultar Atestado");
 		
 		menuPonto.add(menuItemMarcarPonto);
 		menuBar.add(menuPonto);
 		
 		menuAtestado.add(menuItemRegistrarAtestado);
+		menuAtestado.add(menuItemConsultarAtestado);
 		
 
 		if(this.funcionario.getPerfil().getDescricao().toUpperCase().equals("RH")) {
-			menuPonto.add(menuItemRelatorioPonto);
+			menuPonto.add(menuItemConsultarPonto);
 			menuBar.add(menuAtestado);
 		
 		}
@@ -71,7 +74,6 @@ public class MenuView extends JFrame {
 
 
 
-
 	public JMenu getMenuPonto() {	
 		return menuPonto;
 	}
@@ -80,6 +82,24 @@ public class MenuView extends JFrame {
 	public JMenuItem getMenuItemMarcarPonto() {
 		return menuItemMarcarPonto;
 	}
+
+
+	public JMenuItem getMenuItemRegistrarAtestado() {
+		return menuItemRegistrarAtestado;
+	}
+
+
+	public JMenuItem getMenuItemConsultarPonto() {
+		return menuItemConsultarPonto;
+	}
+
+
+	public JMenuItem getMenuItemConsultarAtestado() {
+		return menuItemConsultarAtestado;
+	}
+	
+	
+	
 	
 	
 	

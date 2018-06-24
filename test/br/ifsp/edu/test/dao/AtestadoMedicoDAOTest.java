@@ -1,6 +1,9 @@
 package br.ifsp.edu.test.dao;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,7 +47,6 @@ class AtestadoMedicoDAOTest {
 		funcionarioDAO.salvar(funcionario);
 		AtestadoMedico atestadoMedico = new AtestadoMedico(funcionario, "J150", LocalDate.now(), 5, "JOAO", "500.33");
 		atestadoMedicoDAO.registrar(atestadoMedico);
-		System.out.println("ID " + atestadoMedico.getId());
 	}
 	
 	@Test
@@ -56,6 +58,22 @@ class AtestadoMedicoDAOTest {
 		AtestadoMedico atestadoMedico = new AtestadoMedico(funcionario, "J150", LocalDate.now(), 5, "JOAO", "500.33");
 		atestadoMedicoDAO.registrar(atestadoMedico);
 		atestadoMedicoDAO.excluir(atestadoMedico.getId());
+	}
+	
+	
+	@Test
+	void listarAtestado() {
+		Perfil perfil = new Perfil("RH");
+		perfilDAO.salvar(perfil);
+		Funcionario funcionario = new Funcionario(12345, "JOAO", "ANL REC HUMAN", perfil, "joao", "12345");
+		funcionarioDAO.salvar(funcionario);
+		AtestadoMedico atestadoMedico1 = new AtestadoMedico(funcionario, "J150", LocalDate.now(), 5, "JOAO", "500.33");
+		AtestadoMedico atestadoMedico2 = new AtestadoMedico(funcionario, "F200", LocalDate.now(), 5, "JOAO", "500.33");
+		atestadoMedicoDAO.registrar(atestadoMedico1);
+		atestadoMedicoDAO.registrar(atestadoMedico2);
+		List<AtestadoMedico> atestados = atestadoMedicoDAO.listar();
+		assertEquals(2, atestados.size());
+		
 	}
 
 }

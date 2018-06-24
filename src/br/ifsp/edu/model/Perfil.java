@@ -9,6 +9,8 @@ public class Perfil {
 	public Perfil(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	
 	public long getId() {
 		return id;
 	}

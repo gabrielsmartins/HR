@@ -11,9 +11,12 @@ public class Frequencia {
 	public Frequencia(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+	
+	
 	public LocalDateTime getDataHora() {
 		return dataHora;
 	}
+	
 	public void setDataHora(LocalDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
